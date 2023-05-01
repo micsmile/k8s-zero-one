@@ -1,0 +1,16 @@
+# v1.25 运行一个使用用户命名空间的Pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: userns
+  namespace: demo
+  labels:
+    app: userns
+spec:
+  hostUsers: fasle
+  containers:
+  - name: shell
+    command:
+      - "sleep"
+      - "infinity"
+    image: debian
